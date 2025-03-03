@@ -74,16 +74,12 @@ body {
   color: var(--color4);
   font-weight: 600;
   padding-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .map-button {
   backdrop-filter: blur(0px);
   position: absolute;
-}
-
-.map-button:hover {
-  backdrop-filter: blur(1px); /* Increases blur on hover */
-  background-color: rgba(92, 69, 102, 0.7);
 }
 
 .map-button p {
@@ -96,11 +92,19 @@ body {
   margin: 0;
   border-radius: 5px;
   border: 2px solid white;
-  transition: background-color 0.3s ease;
+  transition: background-color 1s ease;
 }
 
-.map-button p:hover {
+.map-button:hover,
+.map-button:hover p,
+.map-button p:hover,
+.map-button p:hover ~ .map-button {
+  backdrop-filter: blur(1px);
+  background-color: rgba(92, 69, 102, 0.4);
   color: var(--color5);
+}
+
+.map-button:hover p {
   background-color: var(--color8);
 }
 
